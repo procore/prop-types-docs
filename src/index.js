@@ -17,9 +17,14 @@ const getComponentDefaultProps = props =>
     {}
   )
 
-const withDocProps = ({ name, description, props }) => Component => {
+const withDocProps = ({
+  name = '',
+  description = '',
+  props = {},
+}) => Component => {
   Component.displayName = name
   Component.description = description
+  Component.props = props
   Component.propTypes = getComponentPropTypes(props)
   Component.defaultProps = getComponentDefaultProps(props)
 
