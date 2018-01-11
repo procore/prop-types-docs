@@ -1,0 +1,23 @@
+{
+  "name": "doc-prop-types",
+  "version": "0.1.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "peerDependencies": {
+    "prop-types": "^15.6.0"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.6.1",
+    "check-prop-types": "^1.1.2",
+    "jest": "^22.0.4",
+    "prop-types": "^15.6.0"
+  },
+  "dependencies": {
+    "babel-preset-react": "^6.24.1"
+  }
+}
