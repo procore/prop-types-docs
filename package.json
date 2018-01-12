@@ -8,6 +8,10 @@
   },
   "author": "",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/farismmk/prop-types-docs.git"
+  },
   "peerDependencies": {
     "prop-types": "^15.6.0"
   },

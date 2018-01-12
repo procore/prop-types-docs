@@ -1,9 +1,9 @@
-# doc-prop-types [![CircleCI](https://circleci.com/gh/farism/doc-prop-types.svg?style=svg)](https://circleci.com/gh/farism/doc-prop-types)
+# prop-types-docs [![CircleCI](https://circleci.com/gh/farism/prop-types-docs.svg?style=svg)](https://circleci.com/gh/farism/prop-types-docs)
 
 ## Document your prop types
 
 ```js
-import PropTypes, { withDocProps } from 'doc-prop-types'
+import PropTypes, { withPropDocs } from 'prop-types-docs'
 
 const Component = ({ name, age, contacts }) => {
   <div>
@@ -15,7 +15,7 @@ const Component = ({ name, age, contacts }) => {
   </div>
 }
 
-export default withDocProps({
+export default withPropDocs({
   name: { type: PropTypes.string, required: true },
   age: { type: PropTypes.number, required: true },
   contacts: { type: PropTypes.array, default: [] },
