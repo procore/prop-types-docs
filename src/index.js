@@ -17,14 +17,14 @@ const getComponentDefaultProps = props =>
     {}
   )
 
-const withDocProps = ({
+const withPropDocs = ({
   name = '',
   description = '',
   props = {},
 }) => Component => {
   Component.displayName = name
   Component.description = description
-  Component.props = props
+  Component.propInfo = props
   Component.propTypes = getComponentPropTypes(props)
   Component.defaultProps = getComponentDefaultProps(props)
 
@@ -147,5 +147,5 @@ module.exports = {
   shape,
   getComponentPropTypes,
   getComponentDefaultProps,
-  withDocProps,
+  withPropDocs,
 }

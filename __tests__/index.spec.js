@@ -20,17 +20,17 @@ const {
   getShapePropTypes,
   getComponentPropTypes,
   getComponentDefaultProps,
-  withDocProps,
+  withPropDocs,
 } = require('../src')
 
 const LABEL = 'prop'
 
-describe('withDocProps', () => {
+describe('withPropDocs', () => {
   describe('checks required', () => {
     const Cmp = ({ children }) => children
 
     const withRequired = (key, type) => Component =>
-      withDocProps({
+      withPropDocs({
         name: 'Cmp',
         props: { [key]: { type, required: true } },
       })(Component)
@@ -131,7 +131,7 @@ describe('withDocProps', () => {
 
     const Cmp = ({ children }) => children
 
-    withDocProps({
+    withPropDocs({
       name: 'Cmp',
       props: {
         array: { type: array },
@@ -263,7 +263,7 @@ describe('withDocProps', () => {
   describe('checks shape', () => {
     const Cmp = ({ children }) => children
 
-    withDocProps({
+    withPropDocs({
       name: 'Cmp',
       props: {
         shape: shape({
