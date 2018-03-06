@@ -280,6 +280,7 @@ describe('withPropDocs', () => {
     })(Cmp)
 
     const props = Cmp.propTypes
+    const defaults = Cmp.defaultProps
     const name = Cmp.name
 
     it('checks data type', () => {
@@ -328,6 +329,44 @@ describe('withPropDocs', () => {
       expect(actual).toEqual(
         'Failed prop type: Invalid prop `shape.shape.string` of type `number` supplied to `Cmp`, expected `string`.'
       )
+    })
+  })
+
+  describe('getComponentDefaultProps', () => {
+    it('sets defaultProps on the component', () => {
+      const Cmp = ({ children }) => children
+
+      withPropDocs({
+        name: 'Cmp',
+        props: {
+          shape: shape({
+            string: {
+              type: string,
+              default: 'str',
+            },
+            shape: shape({
+              string: {
+                type: string,
+                default: 'string',
+              },
+            }),
+          }),
+          foo: {
+            type: string,
+            default: 'bar',
+          },
+        },
+      })(Cmp)
+
+      expect(Cmp.defaultProps).toEqual({
+        shape: {
+          string: 'foo',
+          shape: {
+            string: 'bar',
+          },
+        },
+        foo: 'bar',
+      })
     })
   })
 })

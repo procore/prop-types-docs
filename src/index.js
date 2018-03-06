@@ -12,10 +12,14 @@ const getComponentPropTypes = props =>
   )
 
 const getComponentDefaultProps = props =>
-  Object.keys(props).reduce(
-    (acc, key) => Object.assign({}, acc, { [key]: props[key].default }),
-    {}
-  )
+  Object.keys(props).reduce((acc, key) => {
+    return Object.assign({}, acc, {
+      [key]:
+        props[key].type.name === 'shape'
+          ? getComponentDefaultProps(props[key].props)
+          : props[key].default,
+    })
+  }, {})
 
 const withPropDocs = ({
   name = '',
@@ -126,6 +130,7 @@ const shape = props => ({
     name: 'shape',
     fn: () => PropTypes.shape(getComponentPropTypes(props)),
     req: () => PropTypes.shape(getComponentPropTypes(props)).isRequired,
+    default: {},
   },
 })
 
