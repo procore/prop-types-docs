@@ -8,7 +8,7 @@ const getComponentPropTypes = props =>
           ? props[key].type.req()
           : props[key].type.fn(),
       }),
-    {}
+    {},
   )
 
 const getComponentDefaultProps = props =>

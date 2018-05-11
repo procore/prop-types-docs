@@ -147,14 +147,25 @@ describe('withPropDocs', () => {
         oneOfType: { type: oneOfType([string]) },
         instanceOf: { type: instanceOf(TestInstance) },
         arrayOf: { type: arrayOf(string) },
+        arrayOfShape: {
+          type: arrayOf(
+            shape({
+              string: {
+                type: string,
+              },
+            }).type,
+          ),
+        },
         objectOf: { type: objectOf(string) },
       },
     })(Cmp)
 
+    console.log(Cmp.propInfo)
+
     const props = Cmp.propTypes
     const name = Cmp.name
 
-    it('check arrays', () => {
+    it('check array', () => {
       const actual = checkPropTypes(props, { array: '' }, LABEL, name)
 
       expect(actual).toEqual(
@@ -248,6 +259,14 @@ describe('withPropDocs', () => {
 
       expect(actual).toEqual(
         'Failed prop type: Invalid prop `arrayOf` of type `string` supplied to `Cmp`, expected an array.',
+      )
+    })
+
+    it('checks arrayOfShape', () => {
+      const actual = checkPropTypes(props, { arrayOfShape: '' }, LABEL, name)
+
+      expect(actual).toEqual(
+        'Failed prop type: Invalid prop `arrayOfShape` of type `string` supplied to `Cmp`, expected an array.',
       )
     })
 
