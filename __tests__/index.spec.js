@@ -387,5 +387,24 @@ describe('withPropDocs', () => {
         foo: 'bar',
       })
     })
+
+    it('skips undefined default props', () => {
+      const Cmp = ({ children }) => children
+
+      withPropDocs({
+        name: 'Cmp',
+        props: {
+          foo: {
+            type: string,
+            default: 'bar',
+          },
+          baz: {
+            type: string,
+          },
+        },
+      })(Cmp)
+
+      expect(Cmp.defaultProps).toEqual({ foo: 'bar' })
+    })
   })
 })
