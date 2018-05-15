@@ -13,12 +13,13 @@ const getComponentPropTypes = props =>
 
 const getComponentDefaultProps = props =>
   Object.keys(props).reduce((acc, key) => {
-    return Object.assign({}, acc, {
-      [key]:
-        props[key].type.name === 'shape'
-          ? getComponentDefaultProps(props[key].props)
-          : props[key].default,
-    })
+    const defaultProp =
+      props[key].type.name === 'shape'
+        ? getComponentDefaultProps(props[key].props)
+        : props[key].default
+    return defaultProp === undefined
+      ? acc
+      : Object.assign({}, acc, { [key]: defaultProp })
   }, {})
 
 const withPropDocs = ({
