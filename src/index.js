@@ -1,4 +1,4 @@
-const PropTypes = require('prop-types')
+import PropTypes from 'prop-types'
 
 const getComponentPropTypes = props =>
   Object.keys(props).reduce(
@@ -8,7 +8,7 @@ const getComponentPropTypes = props =>
           ? props[key].type.req()
           : props[key].type.fn(),
       }),
-    {},
+    {}
   )
 
 const getComponentDefaultProps = props =>
