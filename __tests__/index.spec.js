@@ -41,7 +41,7 @@ describe('withPropDocs', () => {
       const actual = checkPropTypes(Cmp.propTypes, {}, LABEL, Cmp.name)
 
       expect(actual).toEqual(
-        'Failed prop type: The prop `array` is marked as required in `Cmp`, but its value is `undefined`.'
+        'Failed prop type: The prop `array` is marked as required in `Cmp`, but its value is `undefined`.',
       )
     })
 
@@ -51,7 +51,7 @@ describe('withPropDocs', () => {
       const actual = checkPropTypes(Cmp.propTypes, {}, LABEL, Cmp.name)
 
       expect(actual).toEqual(
-        'Failed prop type: The prop `bool` is marked as required in `Cmp`, but its value is `undefined`.'
+        'Failed prop type: The prop `bool` is marked as required in `Cmp`, but its value is `undefined`.',
       )
     })
 
@@ -61,7 +61,7 @@ describe('withPropDocs', () => {
       const actual = checkPropTypes(Cmp.propTypes, {}, LABEL, Cmp.name)
 
       expect(actual).toEqual(
-        'Failed prop type: The prop `func` is marked as required in `Cmp`, but its value is `undefined`.'
+        'Failed prop type: The prop `func` is marked as required in `Cmp`, but its value is `undefined`.',
       )
     })
 
@@ -71,7 +71,7 @@ describe('withPropDocs', () => {
       const actual = checkPropTypes(Cmp.propTypes, {}, LABEL, Cmp.name)
 
       expect(actual).toEqual(
-        'Failed prop type: The prop `number` is marked as required in `Cmp`, but its value is `undefined`.'
+        'Failed prop type: The prop `number` is marked as required in `Cmp`, but its value is `undefined`.',
       )
     })
 
@@ -81,7 +81,7 @@ describe('withPropDocs', () => {
       const actual = checkPropTypes(Cmp.propTypes, {}, LABEL, Cmp.name)
 
       expect(actual).toEqual(
-        'Failed prop type: The prop `object` is marked as required in `Cmp`, but its value is `undefined`.'
+        'Failed prop type: The prop `object` is marked as required in `Cmp`, but its value is `undefined`.',
       )
     })
 
@@ -91,7 +91,7 @@ describe('withPropDocs', () => {
       const actual = checkPropTypes(Cmp.propTypes, {}, LABEL, Cmp.name)
 
       expect(actual).toEqual(
-        'Failed prop type: The prop `string` is marked as required in `Cmp`, but its value is `undefined`.'
+        'Failed prop type: The prop `string` is marked as required in `Cmp`, but its value is `undefined`.',
       )
     })
 
@@ -101,7 +101,7 @@ describe('withPropDocs', () => {
       const actual = checkPropTypes(Cmp.propTypes, {}, LABEL, Cmp.name)
 
       expect(actual).toEqual(
-        'Failed prop type: The prop `symbol` is marked as required in `Cmp`, but its value is `undefined`.'
+        'Failed prop type: The prop `symbol` is marked as required in `Cmp`, but its value is `undefined`.',
       )
     })
 
@@ -111,7 +111,7 @@ describe('withPropDocs', () => {
       const actual = checkPropTypes(Cmp.propTypes, {}, LABEL, Cmp.name)
 
       expect(actual).toEqual(
-        'Failed prop type: The prop `node` is marked as required in `Cmp`, but its value is `undefined`.'
+        'Failed prop type: The prop `node` is marked as required in `Cmp`, but its value is `undefined`.',
       )
     })
 
@@ -121,7 +121,7 @@ describe('withPropDocs', () => {
       const actual = checkPropTypes(Cmp.propTypes, {}, LABEL, Cmp.name)
 
       expect(actual).toEqual(
-        'Failed prop type: The prop `element` is marked as required in `Cmp`, but its value is `undefined`.'
+        'Failed prop type: The prop `element` is marked as required in `Cmp`, but its value is `undefined`.',
       )
     })
   })
@@ -153,12 +153,14 @@ describe('withPropDocs', () => {
               string: {
                 type: string,
               },
-            }).type
+            }).type,
           ),
         },
         objectOf: { type: objectOf(string) },
       },
     })(Cmp)
+
+    console.log(Cmp.propInfo)
 
     const props = Cmp.propTypes
     const name = Cmp.name
@@ -167,7 +169,7 @@ describe('withPropDocs', () => {
       const actual = checkPropTypes(props, { array: '' }, LABEL, name)
 
       expect(actual).toEqual(
-        'Failed prop type: Invalid prop `array` of type `string` supplied to `Cmp`, expected `array`.'
+        'Failed prop type: Invalid prop `array` of type `string` supplied to `Cmp`, expected `array`.',
       )
     })
 
@@ -175,7 +177,7 @@ describe('withPropDocs', () => {
       const actual = checkPropTypes(props, { bool: '' }, LABEL, name)
 
       expect(actual).toEqual(
-        'Failed prop type: Invalid prop `bool` of type `string` supplied to `Cmp`, expected `boolean`.'
+        'Failed prop type: Invalid prop `bool` of type `string` supplied to `Cmp`, expected `boolean`.',
       )
     })
 
@@ -183,7 +185,7 @@ describe('withPropDocs', () => {
       const actual = checkPropTypes(props, { func: '' }, LABEL, name)
 
       expect(actual).toEqual(
-        'Failed prop type: Invalid prop `func` of type `string` supplied to `Cmp`, expected `function`.'
+        'Failed prop type: Invalid prop `func` of type `string` supplied to `Cmp`, expected `function`.',
       )
     })
 
@@ -191,7 +193,7 @@ describe('withPropDocs', () => {
       const actual = checkPropTypes(props, { number: '' }, LABEL, name)
 
       expect(actual).toEqual(
-        'Failed prop type: Invalid prop `number` of type `string` supplied to `Cmp`, expected `number`.'
+        'Failed prop type: Invalid prop `number` of type `string` supplied to `Cmp`, expected `number`.',
       )
     })
 
@@ -199,7 +201,7 @@ describe('withPropDocs', () => {
       const actual = checkPropTypes(props, { object: '' }, LABEL, name)
 
       expect(actual).toEqual(
-        'Failed prop type: Invalid prop `object` of type `string` supplied to `Cmp`, expected `object`.'
+        'Failed prop type: Invalid prop `object` of type `string` supplied to `Cmp`, expected `object`.',
       )
     })
 
@@ -207,7 +209,7 @@ describe('withPropDocs', () => {
       const actual = checkPropTypes(props, { string: 123 }, LABEL, name)
 
       expect(actual).toEqual(
-        'Failed prop type: Invalid prop `string` of type `number` supplied to `Cmp`, expected `string`.'
+        'Failed prop type: Invalid prop `string` of type `number` supplied to `Cmp`, expected `string`.',
       )
     })
 
@@ -215,7 +217,7 @@ describe('withPropDocs', () => {
       const actual = checkPropTypes(props, { symbol: '' }, LABEL, name)
 
       expect(actual).toEqual(
-        'Failed prop type: Invalid prop `symbol` of type `string` supplied to `Cmp`, expected `symbol`.'
+        'Failed prop type: Invalid prop `symbol` of type `string` supplied to `Cmp`, expected `symbol`.',
       )
     })
 
@@ -232,7 +234,7 @@ describe('withPropDocs', () => {
       const actual = checkPropTypes(props, { element: '' }, LABEL, name)
 
       expect(actual).toEqual(
-        'Failed prop type: Invalid prop `element` of type `string` supplied to `Cmp`, expected a single ReactElement.'
+        'Failed prop type: Invalid prop `element` of type `string` supplied to `Cmp`, expected a single ReactElement.',
       )
     })
 
@@ -240,7 +242,7 @@ describe('withPropDocs', () => {
       const actual = checkPropTypes(props, { oneOf: '' }, LABEL, name)
 
       expect(actual).toEqual(
-        'Failed prop type: Invalid prop `oneOf` of value `` supplied to `Cmp`, expected one of ["string",0].'
+        'Failed prop type: Invalid prop `oneOf` of value `` supplied to `Cmp`, expected one of ["string",0].',
       )
     })
 
@@ -248,7 +250,7 @@ describe('withPropDocs', () => {
       const actual = checkPropTypes(props, { oneOfType: 123 }, LABEL, name)
 
       expect(actual).toEqual(
-        'Failed prop type: Invalid prop `oneOfType` supplied to `Cmp`.'
+        'Failed prop type: Invalid prop `oneOfType` supplied to `Cmp`.',
       )
     })
 
@@ -256,7 +258,7 @@ describe('withPropDocs', () => {
       const actual = checkPropTypes(props, { arrayOf: '' }, LABEL, name)
 
       expect(actual).toEqual(
-        'Failed prop type: Invalid prop `arrayOf` of type `string` supplied to `Cmp`, expected an array.'
+        'Failed prop type: Invalid prop `arrayOf` of type `string` supplied to `Cmp`, expected an array.',
       )
     })
 
@@ -264,7 +266,7 @@ describe('withPropDocs', () => {
       const actual = checkPropTypes(props, { arrayOfShape: '' }, LABEL, name)
 
       expect(actual).toEqual(
-        'Failed prop type: Invalid prop `arrayOfShape` of type `string` supplied to `Cmp`, expected an array.'
+        'Failed prop type: Invalid prop `arrayOfShape` of type `string` supplied to `Cmp`, expected an array.',
       )
     })
 
@@ -272,7 +274,7 @@ describe('withPropDocs', () => {
       const actual = checkPropTypes(props, { instanceOf: '' }, LABEL, name)
 
       expect(actual).toEqual(
-        'Failed prop type: Invalid prop `instanceOf` of type `String` supplied to `Cmp`, expected instance of `TestInstance`.'
+        'Failed prop type: Invalid prop `instanceOf` of type `String` supplied to `Cmp`, expected instance of `TestInstance`.',
       )
     })
   })
@@ -308,11 +310,11 @@ describe('withPropDocs', () => {
             'Failed prop type: Invalid prop `shape.string` of type `number` supplied to `Cmp`, expected `string`.',
         },
         LABEL,
-        name
+        name,
       )
 
       expect(actual).toEqual(
-        'Failed prop type: Invalid prop `shape` of type `string` supplied to `Cmp`, expected `object`.'
+        'Failed prop type: Invalid prop `shape` of type `string` supplied to `Cmp`, expected `object`.',
       )
     })
 
@@ -321,11 +323,11 @@ describe('withPropDocs', () => {
         props,
         { shape: { string: 123 } },
         LABEL,
-        name
+        name,
       )
 
       expect(actual).toEqual(
-        'Failed prop type: Invalid prop `shape.string` of type `number` supplied to `Cmp`, expected `string`.'
+        'Failed prop type: Invalid prop `shape.string` of type `number` supplied to `Cmp`, expected `string`.',
       )
     })
 
@@ -340,11 +342,11 @@ describe('withPropDocs', () => {
           },
         },
         LABEL,
-        name
+        name,
       )
 
       expect(actual).toEqual(
-        'Failed prop type: Invalid prop `shape.shape.string` of type `number` supplied to `Cmp`, expected `string`.'
+        'Failed prop type: Invalid prop `shape.shape.string` of type `number` supplied to `Cmp`, expected `string`.',
       )
     })
   })
