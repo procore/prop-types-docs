@@ -2,10 +2,9 @@
   "name": "prop-types-docs",
   "version": "0.2.0",
   "description": "",
-  "main": "build/index.cjs.js",
-  "module": "build/index.es.js",
+  "main": "build/index.js",
   "scripts": {
-    "build": "rollup -c",
+    "build": "babel src -d build",
     "prepublish": "npm run build",
     "test": "jest"
   },
@@ -19,11 +18,12 @@
     "prop-types": "^15.6.0"
   },
   "devDependencies": {
+    "babel": "^6.23.0",
     "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
     "check-prop-types": "^1.1.2",
     "jest": "^22.0.4",
-    "prop-types": "^15.6.1",
-    "rollup": "^0.59.4"
+    "prop-types": "^15.6.0"
   }
 }
