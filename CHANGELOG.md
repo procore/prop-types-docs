@@ -1,3 +1,7 @@
+v0.2.1
+
+* revert rollup for the time being, umd build didn't seem to be working correctly
+
 v0.2.0
 
 * Use rollup to build instead of using babel directly
