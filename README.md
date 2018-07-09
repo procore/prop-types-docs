@@ -5,20 +5,22 @@
 ```js
 import PropTypes, { withPropDocs } from 'prop-types-docs'
 
-const Component = ({ name, age, contacts }) => {
+const Component = ({ name, age, contacts }) => (
   <div>
     name: {name}
     age: {age}
 
     contacts:
-    {contacts.map(() => ...)}
+    {contacts.map((contact) => contact)}
   </div>
-}
+)
 
 export default withPropDocs({
-  name: { type: PropTypes.string, required: true },
-  age: { type: PropTypes.number, required: true },
-  contacts: { type: PropTypes.array, default: [] },
+  props: {
+    name: { type: PropTypes.string, required: true },
+    age: { type: PropTypes.number, required: true },
+    contacts: { type: PropTypes.array, default: [] },
+  }
 })(Component)
 ```
 
