@@ -2,7 +2,7 @@
 import PropTypes, { withPropDocs } from 'prop-types-docs'
 ```
 
-## `withPropDocs`
+### `withPropDocs`
 
 ```js
 withPropDocs({
@@ -17,7 +17,7 @@ withPropDocs({
 })
 ```
 
-## `PropTypes.array`
+### `PropTypes.array`
 
 ```js
 withPropDocs({
@@ -31,7 +31,7 @@ withPropDocs({
 })
 ```
 
-## `PropTypes.bool`
+### `PropTypes.bool`
 
 ```js
 withPropDocs({
@@ -45,7 +45,7 @@ withPropDocs({
 })
 ```
 
-## `PropTypes.func`
+### `PropTypes.func`
 
 ```js
 withPropDocs({
@@ -59,7 +59,7 @@ withPropDocs({
 })
 ```
 
-## `PropTypes.number`
+### `PropTypes.number`
 
 ```js
 withPropDocs({
@@ -73,7 +73,7 @@ withPropDocs({
 })
 ```
 
-## `PropTypes.object`
+### `PropTypes.object`
 
 ```js
 withPropDocs({
@@ -87,7 +87,7 @@ withPropDocs({
 })
 ```
 
-## `PropTypes.string`
+### `PropTypes.string`
 
 ```js
 withPropDocs({
@@ -101,9 +101,9 @@ withPropDocs({
 })
 ```
 
-## `PropTypes.symbol`
+### `PropTypes.symbol`
 
-## `PropTypes.node`
+### `PropTypes.node`
 
 ```js
 withPropDocs({
@@ -115,7 +115,7 @@ withPropDocs({
 })
 ```
 
-## `PropTypes.element`
+### `PropTypes.element`
 
 ```js
 withPropDocs({
@@ -127,7 +127,7 @@ withPropDocs({
 })
 ```
 
-## `PropTypes.oneOf`
+### `PropTypes.oneOf`
 
 ```js
 withPropDocs({
@@ -141,7 +141,7 @@ withPropDocs({
 })
 ```
 
-## `PropTypes.oneOfType`
+### `PropTypes.oneOfType`
 
 ```js
 withPropDocs({
@@ -155,9 +155,9 @@ withPropDocs({
 })
 ```
 
-## `PropTypes.instanceOf`
+### `PropTypes.instanceOf`
 
-## `PropTypes.arrayOf`
+### `PropTypes.arrayOf`
 
 ```js
 withPropDocs({
@@ -171,7 +171,7 @@ withPropDocs({
 })
 ```
 
-## `PropTypes.objectOf`
+### `PropTypes.objectOf`
 
 ```js
 withPropDocs({
@@ -185,7 +185,7 @@ withPropDocs({
 })
 ```
 
-## `PropTypes.shape`
+### `PropTypes.shape`
 
 ```js
 withPropDocs({

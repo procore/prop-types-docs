@@ -1,8 +1,8 @@
 # prop-types-docs [![CircleCI](https://circleci.com/gh/farism/prop-types-docs.svg?style=svg)](https://circleci.com/gh/farism/prop-types-docs)
 
-## Document your prop types!
+### Document your prop types!
 
-## [API Documentation](https://github.com/farism/prop-types-docs/blob/master/API.md)
+### [API Documentation](https://github.com/farism/prop-types-docs/blob/master/API.md)
 
 ### Installation
 
@@ -53,7 +53,7 @@ export default withPropDocs({
 })(MyComponent)
 ```
 
-## Which is the equivalent of:
+### Which is the equivalent of:
 
 ```js
 import PropTypes from 'prop-types'
