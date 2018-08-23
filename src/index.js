@@ -51,7 +51,7 @@ const bool = {
 const func = {
   name: 'function',
   fn: () => PropTypes.func,
-  req: () => PropTypes.bool.isRequired,
+  req: () => PropTypes.func.isRequired,
 }
 
 const number = {
