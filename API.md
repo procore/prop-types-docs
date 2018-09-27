@@ -12,6 +12,7 @@ withPropDocs({
       type: PropTypes.array,
       required: false,
       default: [],
+      deprecated: 'the "contacts" field is deprecated'
     },
   },
 })

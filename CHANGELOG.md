@@ -1,3 +1,7 @@
+v0.3.0
+
+- adds a `deprecated` key to prop type definitions
+
 v0.2.2
 
 - update readme with correct examples
