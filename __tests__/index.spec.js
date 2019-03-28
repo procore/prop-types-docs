@@ -388,6 +388,44 @@ describe('withPropDocs', () => {
       })
     })
 
+    it('sets a default shape value of undefined', () => {
+      const Cmp = ({ children }) => children
+
+      withPropDocs({
+        name: 'Cmp2',
+        props: {
+          shape: shape({
+            string: {
+              type: string,
+              // default: 'hello world'
+            }
+          }),
+        }
+      })(Cmp)
+
+      expect(Cmp.defaultProps.shape).toEqual(undefined)
+    })
+
+    it('sets a default shape value if passed one', () => {
+      const Cmp = ({ children }) => children
+
+      withPropDocs({
+        name: 'Cmp2',
+        props: {
+          shape: shape({
+            string: {
+              type: string,
+              default: 'hello world'
+            }
+          }),
+        },
+      })(Cmp)
+
+      expect(Cmp.defaultProps.shape).toEqual({
+        string: 'hello world'
+      })
+    })
+
     it('skips undefined default props', () => {
       const Cmp = ({ children }) => children
 
