@@ -2,7 +2,7 @@ v0.5.0
 - shape with no keys which have defaults defined returns `undefined` for shape default prop
 
 v0.4.0
-- revert addition of `depricated` key
+- revert addition of `deprecated` key
 
 v0.3.0
 
