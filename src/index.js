@@ -11,16 +11,21 @@ const getComponentPropTypes = props =>
     {},
   )
 
-const getComponentDefaultProps = props =>
-  Object.keys(props).reduce((acc, key) => {
-    const defaultProp =
-      props[key].type.name === 'shape'
-        ? getComponentDefaultProps(props[key].props)
-        : props[key].default
+
+const getComponentDefaultProps = (props) => {
+  return Object.keys(props).reduce((acc, key) => {
+    let defaultProp = {};
+    if (props[key].type.name === 'shape') {
+      const shapeDefaults = getComponentDefaultProps(props[key].props);
+      defaultProp = Object.keys(shapeDefaults).length > 0 ? shapeDefaults : undefined;
+    } else {
+      defaultProp = props[key].default;
+    }
     return defaultProp === undefined
       ? acc
       : Object.assign({}, acc, { [key]: defaultProp })
   }, {})
+}
 
 const withPropDocs = ({
   name = '',
@@ -125,15 +130,16 @@ const objectOf = type => ({
   req: () => PropTypes.objectOf(type.fn()).isRequired,
 })
 
-const shape = props => ({
-  props,
-  type: {
-    name: 'shape',
-    fn: () => PropTypes.shape(getComponentPropTypes(props)),
-    req: () => PropTypes.shape(getComponentPropTypes(props)).isRequired,
-    default: {},
-  },
-})
+const shape = (props) => {
+  return ({
+    props,
+    type: {
+      name: 'shape',
+      fn: () => PropTypes.shape(getComponentPropTypes(props)),
+      req: () => PropTypes.shape(getComponentPropTypes(props)).isRequired
+    }
+  });
+}
 
 module.exports = {
   array,
