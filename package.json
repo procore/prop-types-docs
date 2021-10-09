@@ -23,7 +23,7 @@
     "babel-preset-env": "1.7.0",
     "babel-preset-react": "6.24.1",
     "check-prop-types": "1.1.2",
-    "jest": "23.6.0",
+    "jest": "24.0.0",
     "prop-types": "15.6.2"
   }
 }
